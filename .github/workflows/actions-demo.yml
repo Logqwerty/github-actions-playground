@@ -27,6 +27,7 @@ jobs:
       - run: bats -v
 
   Custom-env:
+    runs-on: ubuntu-latest
     steps:
       - name: Set custom env variables
         env:
