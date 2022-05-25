@@ -41,5 +41,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Run echo script
-        run: ./.github/scripts/custom-echo.sh
+        run: |
+          chmod +x ./.github/scripts/custom-echo.sh
+          ./.github/scripts/custom-echo.sh
         shell: bash
