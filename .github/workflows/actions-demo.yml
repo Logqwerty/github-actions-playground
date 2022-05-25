@@ -60,7 +60,7 @@ jobs:
   
   Sharing-data-download:
     runs-on: ubuntu-latest
-    nees: Sharing-data-upload
+    needs: Sharing-data-upload
     steps:
       - name: Load a single artifact
         uses: actions/download-artifact@v3
