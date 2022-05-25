@@ -1,8 +1,8 @@
 name: Github Actions Demo
 on: [push]
 jobs:
+  runs-on: ubuntu-latest
   Explore-Github-Actions:
-    runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
@@ -17,7 +17,6 @@ jobs:
       - run: echo "🍏 This job's status is ${{ job.status }}."
 
   Check-bats-version:
-    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -27,7 +26,6 @@ jobs:
       - run: bats -v
 
   Custom-env:
-    runs-on: ubuntu-latest
     steps:
       - name: Set custom env variables
         env:
@@ -37,8 +35,7 @@ jobs:
 
 
   Run-scripts:
-    runs-on: ubuntu-latest
     steps:
       - name: Run echo script
-        run: ./.github/scripts/echo.sh
+        run: ./.github/scripts/custom-echo.sh
         shell: bash
