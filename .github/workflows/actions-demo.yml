@@ -44,3 +44,25 @@ jobs:
         run: |
           ./.github/scripts/custom-echo.sh
         shell: bash
+
+  Sharing-data-upload:
+    runs-on: ubuntu-latest
+    name: Save output
+    steps:
+      - shell: bash
+        run: |
+          expr 1 + 1 > output.log
+      - name: Upload output file
+        uses: actions/upload-artifact@v3
+        with:
+          name: output-log-file
+          path: output.log
+  
+  Sharing-data-download:
+    runs-on: ubuntu-latest
+    nees: Sharing-data-upload
+    steps:
+      - name: Load a single artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: output-log-file
