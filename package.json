@@ -1,0 +1,11 @@
+{
+  "name": "github-actions-playground",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Logqwerty/github-actions-playground.git",
+  "author": "HJ Jeon <sloth19@tublet.io>",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.0.1"
+  }
+}
