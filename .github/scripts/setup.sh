@@ -8,4 +8,4 @@ echo ""
 echo "Install dependencies"
 echo ""
 
-yarn install --immutable
+yarn install --frozen-lockfile
